@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))l(n);new MutationObserver(n=>{for(const s of n)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&l(c)}).observe(document,{childList:!0,subtree:!0});function o(n){const s={};return n.integrity&&(s.integrity=n.integrity),n.referrerPolicy&&(s.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?s.credentials="include":n.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function l(n){if(n.ep)return;n.ep=!0;const s=o(n);fetch(n.href,s)}})();const b=(e,t)=>{if(!t)return;localStorage.setItem(e,JSON.stringify(t));const o=new Event("storage");window.dispatchEvent(o)},p=e=>{const t=localStorage.getItem(e);return t?JSON.parse(t):null},g=e=>{localStorage.removeItem(e);const t=new Event("storage");window.dispatchEvent(t)},u="user",m=e=>b(u,e),i=()=>p(u),v=()=>g(u);function x(){return`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))l(n);new MutationObserver(n=>{for(const s of n)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&l(c)}).observe(document,{childList:!0,subtree:!0});function o(n){const s={};return n.integrity&&(s.integrity=n.integrity),n.referrerPolicy&&(s.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?s.credentials="include":n.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function l(n){if(n.ep)return;n.ep=!0;const s=o(n);fetch(n.href,s)}})();const p=(e,t)=>{if(!t)return;localStorage.setItem(e,JSON.stringify(t));const o=new Event("storage");window.dispatchEvent(o)},g=e=>{const t=localStorage.getItem(e);return t?JSON.parse(t):null},v=e=>{localStorage.removeItem(e);const t=new Event("storage");window.dispatchEvent(t)},m="user",f=e=>p(m,e),i=()=>g(m),h=()=>v(m);function x(){return`
       <main class="bg-gray-100 flex items-center justify-center min-h-screen">
         <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
           <h1 class="text-2xl font-bold text-center text-blue-600 mb-8">항해플러스</h1>
@@ -20,20 +20,20 @@
           </div>
         </div>
       </main>
-  `}function y(){document.getElementById("login-form").addEventListener("submit",t=>{t.preventDefault();const o=document.getElementById("username").value,l=document.getElementById("password").value;o&&l&&(m({username:o,email:"",bio:""}),a("/"))})}function h(){return`
+  `}function y(){document.getElementById("login-form").addEventListener("submit",t=>{t.preventDefault();const o=document.getElementById("username").value,l=document.getElementById("password").value;o&&l&&(f({username:o,email:"",bio:""}),r("/"))})}function w(){return`
     <div class="mb-4 bg-white rounded-lg shadow p-4">
       <textarea id="idea" class="w-full p-2 border rounded" placeholder="무슨 생각을 하고 계신가요?"></textarea>
       <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded post-button">게시</button>
     </div>
 
     <div class="space-y-4">
-      ${r("홍길동","5분 전","오늘 날씨가 정말 좋네요. 다들 좋은 하루 보내세요!")}
-      ${r("김철수","15분 전","새로운 프로젝트를 시작했어요. 열심히 코딩 중입니다!")}
-      ${r("이영희","30분 전","오늘 점심 메뉴 추천 받습니다. 뭐가 좋을까요?")}
-      ${r("박민수","1시간 전","주말에 등산 가실 분 계신가요? 함께 가요!")}
-      ${r("정수연","2시간 전","새로 나온 영화 재미있대요. 같이 보러 갈 사람?")}
+      ${a("홍길동","5분 전","오늘 날씨가 정말 좋네요. 다들 좋은 하루 보내세요!")}
+      ${a("김철수","15분 전","새로운 프로젝트를 시작했어요. 열심히 코딩 중입니다!")}
+      ${a("이영희","30분 전","오늘 점심 메뉴 추천 받습니다. 뭐가 좋을까요?")}
+      ${a("박민수","1시간 전","주말에 등산 가실 분 계신가요? 함께 가요!")}
+      ${a("정수연","2시간 전","새로 나온 영화 재미있대요. 같이 보러 갈 사람?")}
     </div>
-`}function r(e,t,o){return`
+`}function a(e,t,o){return`
     <div class="bg-white rounded-lg shadow p-4">
       <div class="flex items-center mb-2">
         <img src="https://placehold.co/40" alt="프로필" class="rounded-full mr-2">
@@ -49,7 +49,7 @@
         <button>공유</button>
       </div>
     </div>
-  `}function f(){return`
+  `}function b(){return`
   <main class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full text-center" style="max-width: 480px">
       <h1 class="text-2xl font-bold text-blue-600 mb-4">항해플러스</h1>
@@ -63,7 +63,7 @@
       </a>
     </div>
   </main>
-`}function w(){const e=i();return`
+`}function E(){const e=i();return`
     <div class="bg-white p-8 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold text-center text-blue-600 mb-8">
         내 프로필
@@ -116,7 +116,7 @@
         </button>
       </form>
     </div>
-`}function E(){const e=i(),t=document.getElementById("profile-form");document.getElementById("username").value=e.username,document.getElementById("email").value=e.email,document.getElementById("bio").value=e.bio,t.addEventListener("submit",o=>{o.preventDefault();const l=document.getElementById("username").value,n=document.getElementById("email").value,s=document.getElementById("bio").value;m({...e,username:l,email:n,bio:s}),alert("프로필 변경이 완료되었습니다")})}function I(){const e=!!i();return`
+`}function I(){const e=i(),t=document.getElementById("profile-form");document.getElementById("username").value=e.username,document.getElementById("email").value=e.email,document.getElementById("bio").value=e.bio,t.addEventListener("submit",o=>{o.preventDefault();const l=document.getElementById("username").value,n=document.getElementById("email").value,s=document.getElementById("bio").value;f({...e,username:l,email:n,bio:s}),alert("프로필 변경이 완료되었습니다")})}function L(){const e=!!i();return`
      <header class="bg-blue-600 text-white p-4 sticky top-0">
         <h1 class="text-2xl font-bold">항해플러스</h1> 
      </header>
@@ -127,16 +127,16 @@
           <li><a href="#" class="text-gray-600" id="logout" data-userinfo>${e?"로그아웃":"로그인"}</a></li>
         </ul>
      </nav>
-  `}function L(){const e=document.getElementById("logout");e&&e.addEventListener("click",o=>{o.preventDefault(),!!i()?(v(),localStorage.removeItem("user"),a("/")):a("/login")}),document.querySelector("nav").addEventListener("click",o=>{const l=o.target.closest("[data-link]");if(l){o.preventDefault();const n=l.getAttribute("href");a(n)}})}function $(){return`
+  `}function $(){const e=document.getElementById("logout");e&&e.addEventListener("click",o=>{o.preventDefault(),!!i()?(h(),localStorage.removeItem("user"),r("/")):r("/login")}),document.querySelector("nav").addEventListener("click",o=>{const l=o.target.closest("[data-link]");if(l){o.preventDefault();const n=l.getAttribute("href");r(n)}})}function B(){return`
     <footer class="bg-gray-200 p-4 text-center">
       <p>&copy; 2024 항해플러스. All rights reserved.</p>
     </footer>
-  `}function B(e){return`
+  `}function P(e){return`
     <div class="bg-gray-100 min-h-screen flex justify-center">
        <div class="max-w-md w-full">
-         ${I()}
+         ${L()}
           <main class="p-4">${e}</main>   
-          ${$()}
+          ${B()}
         </div>  
       </div>
-  `}const P={"/":h,"/login":x,"/profile":w,"/not-found":f},d=()=>{let e=location.pathname;e==="/profile"&&!i()&&(e="/login",window.history.replaceState({},"",e));const t=P[e]||f;e==="/"||e==="/profile"?(document.getElementById("root").innerHTML=B(t()),L(),e==="/profile"&&E()):(document.getElementById("root").innerHTML=t(),e==="/login"&&y())},a=e=>{window.history.pushState({},"",e),d()};window.addEventListener("popstate",d);window.addEventListener("load",d);window.addEventListener("storage",d);document.addEventListener("DOMContentLoaded",()=>{d(),document.body.addEventListener("click",e=>{const t=e.target;if(t.matches("[data-link]")){e.preventDefault();const o=t.dataset.link;a(o)}})});
+  `}const u="/front_5th_chapter1-1",S={"/":w,"/login":x,"/profile":E,"/not-found":b},d=()=>{let e=location.pathname.replace(u,"")||"";e==="/profile"&&!i()&&(e="/login",window.history.replaceState({},"",u+e));const t=S[e]||b;e==="/"||e==="/profile"?(document.getElementById("root").innerHTML=P(t()),$(),e==="/profile"&&I()):(document.getElementById("root").innerHTML=t(),e==="/login"&&y())},r=e=>{window.history.pushState({},"",u+e),d()};window.addEventListener("popstate",d);window.addEventListener("load",d);window.addEventListener("storage",d);document.addEventListener("DOMContentLoaded",()=>{d(),document.body.addEventListener("click",e=>{const t=e.target;if(t.matches("[data-link]")){e.preventDefault();const o=t.dataset.link;r(o)}})});
