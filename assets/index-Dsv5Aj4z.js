@@ -116,27 +116,27 @@
         </button>
       </form>
     </div>
-`}function E(){const e=a(),t=document.getElementById("profile-form");document.getElementById("username").value=e.username,document.getElementById("email").value=e.email,document.getElementById("bio").value=e.bio,t.addEventListener("submit",n=>{n.preventDefault();const s=document.getElementById("username").value,o=document.getElementById("email").value,r=document.getElementById("bio").value;m({...e,username:s,email:o,bio:r}),alert("프로필 변경이 완료되었습니다")})}function I(){const e=!!a();return`
+`}function E(){const e=a(),t=document.getElementById("profile-form");document.getElementById("username").value=e.username,document.getElementById("email").value=e.email,document.getElementById("bio").value=e.bio,t.addEventListener("submit",n=>{n.preventDefault();const s=document.getElementById("username").value,o=document.getElementById("email").value,r=document.getElementById("bio").value;m({...e,username:s,email:o,bio:r}),alert("프로필 변경이 완료되었습니다")})}function _(){const e=!!a();return`
      <header class="bg-blue-600 text-white p-4 sticky top-0">
         <h1 class="text-2xl font-bold">항해플러스</h1> 
      </header>
      <nav class="bg-white shadow-md p-2 sticky top-14">
         <ul class="flex justify-around">
-          <li><a href="/" class="${location.pathname==="/"?"text-blue-600":"text-gray-600"}" data-link>홈</a></li>
-          ${e?`<li><a href="/profile" class="${location.pathname==="/profile"?"text-blue-600":"text-gray-600"}" data-link>프로필</a></li>`:""}
+          <li><a href="/" class="${location.pathname==="/front_5th_chapter1-1/"?"text-blue-600":"text-gray-600"}" data-link>홈</a></li>
+          ${e?`<li><a href="/front_5th_chapter1-1/profile" class="${location.pathname==="/front_5th_chapter1-1/profile"?"text-blue-600":"text-gray-600"}" data-link>프로필</a></li>`:""}
           <li><a href="#" class="text-gray-600" id="logout" data-userinfo>${e?"로그아웃":"로그인"}</a></li>
         </ul>
      </nav>
-  `}function L(){const e=document.getElementById("logout");e&&e.addEventListener("click",n=>{n.preventDefault(),!!a()?(h(),localStorage.removeItem("user"),d("/")):d("/login")}),document.querySelector("nav").addEventListener("click",n=>{const s=n.target.closest("[data-link]");if(s){n.preventDefault();const o=s.getAttribute("href");d(o)}})}function _(){return`
+  `}function I(){const e=document.getElementById("logout");e&&e.addEventListener("click",n=>{n.preventDefault(),!!a()?(h(),localStorage.removeItem("user"),d("/front_5th_chapter1-1/")):d("/front_5th_chapter1-1/login")}),document.querySelector("nav").addEventListener("click",n=>{const s=n.target.closest("[data-link]");if(s){n.preventDefault();const o=s.getAttribute("href");d(o)}})}function L(){return`
     <footer class="bg-gray-200 p-4 text-center">
       <p>&copy; 2024 항해플러스. All rights reserved.</p>
     </footer>
   `}function $(e){return`
     <div class="bg-gray-100 min-h-screen flex justify-center">
        <div class="max-w-md w-full">
-         ${I()}
+         ${_()}
           <main class="p-4">${e}</main>   
-          ${_()}
+          ${L()}
         </div>  
       </div>
-  `}const B={"/front_5th_chapter1-1/":y,"/front_5th_chapter1-1/login":v,"/front_5th_chapter1-1/profile":w,"/front_5th_chapter1-1/not-found":f},i=()=>{let e=location.pathname;e==="/front_5th_chapter1-1/profile"&&!a()&&(e="/front_5th_chapter1-1/login",window.history.replaceState({},"",e));const t=B[e]||f;e==="/front_5th_chapter1-1/"||e==="/front_5th_chapter1-1/profile"?(document.getElementById("root").innerHTML=$(t()),L(),e==="/front_5th_chapter1-1/profile"&&E()):(document.getElementById("root").innerHTML=t(),e==="/front_5th_chapter1-1/login"&&x())},d=e=>{window.history.pushState({},"",e),i()};window.addEventListener("popstate",i);window.addEventListener("load",i);window.addEventListener("storage",i);document.addEventListener("DOMContentLoaded",()=>{i()});
+  `}const B={"/front_5th_chapter1-1/":y,"/front_5th_chapter1-1/login":v,"/front_5th_chapter1-1/profile":w,"/front_5th_chapter1-1/not-found":f},i=()=>{let e=location.pathname;e==="/front_5th_chapter1-1/profile"&&!a()&&(e="/front_5th_chapter1-1/login",window.history.replaceState({},"",e));const t=B[e]||f;e==="/front_5th_chapter1-1/"||e==="/front_5th_chapter1-1/profile"?(document.getElementById("root").innerHTML=$(t()),I(),e==="/front_5th_chapter1-1/profile"&&E()):(document.getElementById("root").innerHTML=t(),e==="/front_5th_chapter1-1/login"&&x())},d=e=>{window.history.pushState({},"",e),i()};window.addEventListener("popstate",i);window.addEventListener("load",i);window.addEventListener("storage",i);document.addEventListener("DOMContentLoaded",()=>{i()});
