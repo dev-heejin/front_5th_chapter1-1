@@ -127,7 +127,7 @@
           <li><a href="#" class="text-gray-600" id="logout" data-userinfo>${e?"로그아웃":"로그인"}</a></li>
         </ul>
      </nav>
-  `}function I(){const e=document.getElementById("logout");e&&e.addEventListener("click",n=>{n.preventDefault(),!!a()?(h(),localStorage.removeItem("user"),d("/front_5th_chapter1-1/")):d("/front_5th_chapter1-1/login")}),document.querySelector("nav").addEventListener("click",n=>{const s=n.target.closest("[data-link]");if(s){n.preventDefault();const o=s.getAttribute("href");d(o)}})}function L(){return`
+  `}function I(){document.querySelector("nav").addEventListener("click",n=>{const s=n.target.closest("[data-link]");if(s){n.preventDefault();const o=s.getAttribute("href");d(o)}});const t=document.getElementById("logout");t&&t.addEventListener("click",n=>{n.preventDefault(),!!a()?(h(),localStorage.removeItem("user"),d("/front_5th_chapter1-1/")):d("/front_5th_chapter1-1/login")})}function L(){return`
     <footer class="bg-gray-200 p-4 text-center">
       <p>&copy; 2024 항해플러스. All rights reserved.</p>
     </footer>
